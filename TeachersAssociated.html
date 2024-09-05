@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="ProfileAndNotification.css">
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+.bg-mc{
+    background-color: white;
+}
+        .MainContent {
+            /* border: 2px solid black; */
+            width: 100%;
+            height: 100vh;
+            border-radius: 15px 15px 0px 0px;
+background-color: white;
+        }
+
+        .AddTeacherstag {
+            background-color: white;
+            height: 6vh;
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border-radius: 15px 15px 0px 0px;
+
+        }
+
+        .adclassbtn {
+
+            background-color: #0096FF;
+            color: white;
+            border: none;
+            cursor: pointer;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 0.8rem;
+            font-weight: bold;
+            padding: 0.8rem 1.5rem;
+            border-radius: 0.6rem;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            transition: background-color 0.3s ease, box-shadow 0.3s ease;
+            height: 2.3rem;
+            width: 13rem;
+
+        }
+
+        .adclassbtn span {
+            margin-right: 0.5rem;
+            font-size: 1rem;
+        }
+
+        .adclassbtn:hover {
+            background-color: #007BFF;
+            /* Hover color */
+            box-shadow: 0 6px 8px rgba(0, 0, 0, 0.15);
+            /* Hover shadow */
+        }
+
+        .adclassbtn:active {
+            background-color: #0056b3;
+            box-shadow: 0 3px 4px rgba(0, 0, 0, 0.2);
+            transform: translateY(1px);
+        }
+
+        .cllist {
+            width: 100%;
+            display: flex;
+            /* justify-content: center; */
+            /* align-items: center; */
+            height: 80%;
+            /* Adjusted height to fit within container */
+            overflow-y: auto;
+            /* Makes the class list scrollable */
+        }
+
+        .cltable {
+            border: 2px solid rgb(52, 51, 51);
+            background-color: white;
+            width: 90%;
+            margin: 3rem auto;
+            font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+            border-collapse: collapse;
+            box-shadow: 20px 19px 10px 4px rgba(0, 0, 0, 0.1);
+            overflow-y: auto;
+            /* Enables vertical scrollbar */
+            max-height: 100%;
+        }
+
+        .cl-li-head {
+            position: sticky;
+            top: 0;
+            background-color: #0096FF;
+            color: white;
+            z-index: 1;
+            /* Ensures the thead stays on top of the body rows */
+            
+        }
+
+        .cl-li-head th {
+            font-size: larger;
+            font-weight: bold;
+            text-align: left;
+            padding: 0.75rem 1rem;
+            box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+        }
+
+        .cl-li-body td {
+            font-family: poppins, 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande';
+            text-align: left;
+            border-bottom: #fff;
+            padding: 0.75rem 1rem;
+            font-size: 1rem;
+        }
+
+        .cl-li-body tr:nth-child(even) {
+            background-color: #f7f7f7;
+        }
+
+        .cl-li-body tr:hover {
+            background-color: #f1f1f1;
+            cursor: pointer;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div id="navbar-container" class="navbar-container"></div>
+
+        <!-- The content of the page goes here -->
+        <div class="sccontainer">
+            <div class="profile">
+                <div class="notification">
+                    <span class="material-symbols-outlined">
+                        notifications_active
+                    </span>
+                </div>
+                <div class="profilepic">
+                    <h3>Shivam Mishra</h3>
+                    <span class="material-symbols-outlined">
+                        keyboard_arrow_down
+                    </span>
+                </div>
+            </div>
+            <div class="MainContent">
+                <!-- The content of the page goes here -->
+                <div class="AddTeacherstag"> <button class="adclassbtn" type="button" onclick=""><span
+                            class="material-symbols-outlined">
+                            person
+                        </span> Add Teacher</button> </div>
+                <div class="cllist">
+                    <table class="cltable">
+                        <thead class="cl-li-head">
+                            <tr>
+                                <th>Teacher's Name</th>
+                                <th>Subject Alloted</th>
+                                <th>Working Shift</th>
+                                <th>Current Status</th>
+                            </tr>
+                        </thead>
+                        <tbody class="cl-li-body">
+                            <tr>
+                                <td>Shaan Mishra</td>
+                                <td>6</td>
+                                <td>Morning</td>
+                                <td>In-Class</td>
+                            </tr>
+                            <tr>
+                                <td>Shivam Mishra</td>
+                                <td>3</td>
+                                <td>Afternoon</td>
+                                <td>Absent</td>
+                            </tr>
+                            <tr>
+                                <td>Rohan Mishra</td>
+                                <td>5</td>
+                                <td>Morning</td>
+                                <td>Absent</td>
+
+                            </tr>
+                            <tr>
+                                <td>Ayush Mishra</td>
+                                <td>6</td>
+                                <td>Afternoon</td>
+                                <td>On Leave</td>
+                            </tr>
+                            <tr>
+                                <td>Reems Mishra</td>
+                                <td>6</td>
+                                <td>Morning</td>
+                                <td>In-Class</td>
+
+                            </tr>
+                            <tr>
+                                <td>Rishabh Mishra</td>
+                                <td>6</td>
+                                <td>Afternoon</td>
+                                <td>Break</td>
+                            </tr>
+                            <tr>
+                                <td>Sumith Mishra</td>
+                                <td>6</td>
+                                <td>Morning</td>
+                                <td>In-Class</td>
+
+                            </tr>
+                            <tr>
+                                <td>Piyush Mishra</td>
+                                <td>2</td>
+                                <td>Afternoon</td>
+                                <td>On Leave</td>
+
+                            </tr>
+                            <tr>
+                                <td>Yogesh Mishra</td>
+                                <td>6</td>
+                                <td>Morning</td>
+                                <td>In-Class</td>
+
+                            </tr>
+                            <tr>
+                                <td>Bhavin Mishra</td>
+                                <td>6</td>
+                                <td>Afternoon</td>
+                                <td>In-Class</td>
+                            </tr>
+                            <tr>
+                                <td>Yash Mishra</td>
+                                <td>6</td>
+                                <td>Morning</td>
+                                <td>In-Class</td>
+
+                            </tr>
+                            <tr>
+                                <td>Shubh Mishra</td>
+                                <td>6</td>
+                                <td>Afternoon</td>
+                                <td>Absent</td>
+                            </tr>
+                            <tr>
+                                <td>Jivesh Mishra</td>
+                                <td>6</td>
+                                <td>Morning</td>
+                                <td>In-Class</td>
+
+                            </tr>
+                            <tr>
+                                <td>Aman Mishra</td>
+                                <td>4</td>
+                                <td>Morning</td>
+                                <td>On Leave</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+
+
+
+
+
+
+
+
+            </div>
+
+
+
+
+
+
+
+
+            <script>
+                document.addEventListener("DOMContentLoaded", function () {
+                    // Load the navbar
+                    fetch("navbar.html")
+                        .then(response => response.text())
+                        .then(data => {
+                            document.getElementById("navbar-container").innerHTML = data;
+
+                            // After loading the navbar, highlight the active link
+                            const currentPage = window.location.pathname.split("/").pop();
+                            const links = document.querySelectorAll('.sidebar a');
+
+                            links.forEach(link => {
+                                const linkPage = link.getAttribute('href');
+                                if (linkPage === currentPage) {
+                                    link.classList.add('active');
+                                } else {
+                                    link.classList.remove('active');
+                                }
+                            });
+                        })
+                        .catch(error => console.error('Error loading navbar:', error));
+                });
+
+            </script>
+</body>
+
+</html>

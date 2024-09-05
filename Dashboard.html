@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="ProfileAndNotification.css">
+    <style>
+       .MainContentDB{
+        /* border: 2px solid red; */
+        height: 100%;
+        width: 100%;
+        background-color: white;
+        border-radius: 15px 15px 0px 0px ;
+       }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div id="navbar-container" class="navbar-container"></div>
+
+        <!-- The content of the page goes here -->
+        <div class="sccontainer">
+            <div class="profile">
+                <div class="notification">
+                    <span class="material-symbols-outlined">
+                        notifications_active
+                    </span>
+                </div>
+                <div class="profilepic">
+                    <h3>Shivam Mishra</h3>
+                    <span class="material-symbols-outlined">
+                        keyboard_arrow_down
+                    </span>
+                </div>
+            </div>
+            <div class="MainContentDB">
+
+            </div>
+        </div>
+            <script>
+                document.addEventListener("DOMContentLoaded", function () {
+                    // Load the navbar
+                    fetch("navbar.html")
+                        .then(response => response.text())
+                        .then(data => {
+                            document.getElementById("navbar-container").innerHTML = data;
+
+                            // After loading the navbar, highlight the active link
+                            const currentPage = window.location.pathname.split("/").pop();
+                            const links = document.querySelectorAll('.sidebar a');
+
+                            links.forEach(link => {
+                                const linkPage = link.getAttribute('href');
+                                if (linkPage === currentPage) {
+                                    link.classList.add('active');
+                                } else {
+                                    link.classList.remove('active');
+                                }
+                            });
+                        })
+                        .catch(error => console.error('Error loading navbar:', error));
+                });
+
+            </script>
+</body>
+
+</html>

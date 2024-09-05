@@ -1,0 +1,238 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+:root {
+    --Primary-website-theme: #0096FF;
+    --color-background: rgba(245, 243, 243, 0.865);
+    --color-danger: #ee827a;
+    --color-sucess: #96db87;
+    --color-warning: rgb(236, 66, 14);
+    --color-info-dark: #ea0f0f;
+    --color-info-dark2: #85899f;
+    --color-info-dark3: #2d2c2c;
+
+    --color-info-light: #7d8da1;
+    --color-bs: rgb(159, 159, 159);
+
+
+    --card-border-radius: 2rem;
+    --border-radius-2: 0.4rem;
+    --border-radius-3: 0.8rem;
+    --border-radius-1: 1.2rem;
+
+    --card-padding: 1.8rem;
+    --Normal-padding: 1.2rem;
+
+    --box-shadow: 0rem 2rem 3rem var(--color-bs);
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    outline: 0;
+    appearance: none;
+    border: 0;
+    text-decoration: none;
+    font-family: popoins, sans-serif;
+}
+
+html {
+    font-size: 14px;
+}
+
+body {
+    height: 100vh;
+    width: 100vw;
+    font-size: 0.88rem;
+    background: var(--color-background);
+    user-select: none;
+    overflow-x: hidden;
+    overflow: hidden;
+}
+
+.container {
+    display: grid;
+    width: 98%;
+    margin: 0px;
+    grid-template-columns: 14rem 1fr ;
+    gap: 1.8rem;
+}
+aside{
+    height: 100vh;
+    /* background-color: rgb(138, 138, 245) ; */
+}
+.top{
+    height: 5.5rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    justify-content: center;
+    margin-top: 0.2rem;
+    padding: 0.5rem;
+    background-color: rgb(255, 255, 255);
+}
+aside .logo h1 {
+    font-size: 1.7rem;
+    margin-top: auto;
+}
+aside .logo {
+    
+    display: flex;
+    align-items: center;
+    gap:0.8rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.Top-logo span{
+    width: 1.5rem;
+    height: 2rem;
+}
+a {
+    color: var(--color-info-dark2);
+    text-decoration: none;
+
+}
+
+h1 {
+    font-weight: 600;
+    font-size: 1.8rem;
+    white-space: nowrap
+}
+h2 {
+    font-size: 1.4rem;
+}
+
+h3 {
+    font-size: 1rem;
+    font-weight: 500;
+}
+
+h4 {
+    font-size: 0.8rem;
+}
+
+h5 {
+    font-size: 0.75rem;
+}
+
+
+
+.text-muted {
+    color: var(--color-info-dark)
+}
+
+p {
+    color: var(--color-dark-variant);
+}
+
+b {
+    color: var(--color-dark)
+}
+
+.primary {
+    color: var(--Primary-website-theme)
+}
+
+.danger {
+    color: var(--color-danger)
+}
+
+.warning {
+    color: var(--color-warning)
+}
+
+.sucess {
+    color: var(--color-sucess)
+}
+.closebtn{
+    display: none;
+}
+.sidebar{
+    background-color: white;
+    display: flex;
+    height: 100vh;
+    flex-direction: column;
+    position: relative;
+    gap: 1.2rem;
+    top: 3rem;
+    
+}
+aside .sidebar a{
+    display: flex;
+    
+    color:var(--color-info-dark2);
+    margin-left: 1rem;
+    gap: 1rem;
+    align-items: center;
+    position: relative;
+    height: 3.7rem;
+}
+aside .sidebar a span{
+    font-size: 1.8rem;
+    transition: all 300ms ease;
+
+}
+aside .sidebar a:last-child{
+    position: absolute;
+    bottom:2.4rem;
+    width:100%;
+}
+aside .sidebar a.active-sn {
+    position: absolute;
+    bottom: calc(100vh - 83vh); /* Pushes the Sign Out link to the bottom */
+    color: rgb(220, 36, 36);
+}
+
+aside .sidebar a.active-sn h3 {
+    color: rgb(233, 45, 45);
+    font-weight: 590;
+}
+
+aside .sidebar a.active-sn span {
+    color: rgb(216, 45, 45);
+    margin-left: 0rem;
+    font-weight: 570; /* Apply increased font-weight to icon and text */
+}
+aside .sidebar a.active h3{
+    color: var(--Primary-website-theme);
+    font-weight: 570;
+} 
+aside .sidebar a.active span {
+    color: var(--Primary-website-theme);
+    margin-left: 0rem;
+    font-weight: 570; /* Apply increased font-weight to icon and text */
+}
+aside .sidebar a h3{
+    margin-top: 0.7rem;
+}
+aside .sidebar a.active:before{
+    content: "";
+    width: 6px;
+    height: 100%;
+    background-color: var(--Primary-website-theme);
+
+}
+aside .sidebar a:hover{
+    color: var(--Primary-website-theme)
+}
+aside .sidebar a:hover span{
+margin-left: 1rem;
+transition: all 300ms ease;
+}
+aside .sidebar a .msgcount{
+    margin-left: 1.5rem;
+    background-color: var(--color-danger);
+    color: white;
+    font-size: 0.7rem;
+    padding: 1px 6px;
+    border-radius: var(--border-radius-2);
+}
+.sidebar a:nth-child(3) span.material-symbols-outlined {
+    margin-top: 6.5px; /* Adjust this value as needed */
+}
+
+
+
+/* sc.html style  */

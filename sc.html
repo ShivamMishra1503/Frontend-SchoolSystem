@@ -1,0 +1,445 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <link rel="stylesheet" href="style.css">
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        .sccontainer {
+            /* border: 2px solid black; */
+            height: 100%;
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .profile {
+            width: 100%;
+            height: 5.5rem;
+            /* border: 2px solid black; */
+        }
+
+        .addclass {
+            border-radius: 15px 15px 0px 0px;
+            background-color: white;
+            /* border: 2px solid red; */
+            /* height: 22rem; */
+            width: 100%;
+            gap: 2rem;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            /* Center contents */
+            padding: 1rem;
+        }
+
+        .adclassbtn {
+
+            background-color: #0096FF;
+            color: white;
+            border: none;
+            cursor: pointer;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 0.8rem;
+            font-weight: bold;
+            padding: 0.8rem 1.5rem;
+            border-radius: 0.6rem;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            transition: background-color 0.3s ease, box-shadow 0.3s ease;
+            height: 2rem;
+            width: 9rem;
+
+        }
+
+        .adclassbtn span {
+            margin-right: 0.5rem;
+            font-size: 1rem;
+        }
+
+        .adclassbtn:hover {
+            background-color: #007BFF;
+            /* Hover color */
+            box-shadow: 0 6px 8px rgba(0, 0, 0, 0.15);
+            /* Hover shadow */
+        }
+
+        .adclassbtn:active {
+            background-color: #0056b3;
+            box-shadow: 0 3px 4px rgba(0, 0, 0, 0.2);
+            transform: translateY(1px);
+        }
+
+
+
+        .cllist {
+            background-color: white;
+            display: flex;
+            justify-content: center;
+            /* align-items: center; */
+            height: calc(100% - 27.5rem);
+            /* Adjusted height to fit within container */
+            overflow-y: auto;
+            /* Makes the class list scrollable */
+        }
+
+        .form1 {
+            /* border: 2px solid black; */
+            width: 48%;
+            height: auto;
+            /* Adjust to fit content */
+            padding: 3rem 1rem 0rem 1rem;
+        }
+
+        .form1 label {
+            display: block;
+            margin-bottom: 0.4rem;
+            font-weight: bold;
+        }
+
+        .Fcls {
+
+            width: 100%;
+            /* Make inputs take full width */
+            padding: 0.5rem;
+            /* Add padding to inputs */
+            margin-bottom: 1rem;
+            /* Add margin below inputs */
+            border: 1px solid #2a2a2a;
+            /* Add border */
+            border-radius: 0.4rem;
+            /* Rounded corners */
+        }
+        input:focus{
+           
+
+            box-shadow: 6px 11px 14px rgba(0, 0, 0, 0.1);
+    outline: none;
+    border: 2px solid rgb(0, 0, 0);
+}
+
+        form {
+            
+            border-collapse: none;
+            height: 80%;
+            width: 100%;
+            display: flex;
+            flex-wrap: wrap;
+            /* Wrap fields on small screens */
+            justify-content: space-between;
+            /* Space out fields */
+            width: 100%;
+            margin-bottom: 0.8rem;
+            /* Add margin to the bottom */
+            flex-direction: row;
+        }
+
+        .cltable {
+            background-color: white;
+            width: 90%;
+            margin: 3rem auto;
+            font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+            border-collapse: collapse;
+            box-shadow: 20px 19px 10px 4px rgba(0, 0, 0, 0.1);
+            overflow-y: auto;
+            /* Enables vertical scrollbar */
+            max-height: 100%;
+        }
+
+        .cltable thead {
+            background-color: #0096FF;
+            color: white;
+        }
+
+        .cl-li-head th {
+            font-size: larger;
+            font-weight: bold;
+            text-align: left;
+            padding: 0.75rem 1rem;
+        }
+
+        .cl-li-body td {
+            font-family: poppins, 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande';
+            text-align: left;
+            border-bottom: #fff;
+            padding: 0.75rem 1rem;
+            font-size: 1rem;
+        }
+
+        .cl-li-body tr:nth-child(even) {
+            background-color: #f7f7f7;
+        }
+
+        .cl-li-body tr:hover {
+            background-color: #f1f1f1;
+            cursor: pointer;
+        }
+
+
+
+        .profile {
+            /* border: 2px solid blue; */
+            display: flex;
+            justify-content: flex-end;
+            align-items: center;
+
+        }
+
+        .notification {
+            background-color: white;
+            height: 3rem;
+            width: 3rem;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border-radius: 1rem;
+            border: 0.4px solid grey;
+        }
+
+        .profilepic {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-right: 2rem;
+            margin-left: 2rem;
+            background-color: white;
+            height: 3.5rem;
+            width: 11rem;
+            border-radius: 0.8rem;
+            padding: 0.3rem;
+            border: 0.4px solid grey;
+
+
+        }
+
+        .profilepic span {
+            font-size: 1.4rem;
+        }
+
+        .profilepic h3 {
+            font-size: 1.1rem;
+            font-weight: 530;
+            margin-right: 0.4rem;
+        }
+
+        .notification:hover,
+        .profilepic:hover {
+            cursor: pointer;
+            background-color: #f5f5f5;
+        }
+
+        .notification:active,
+        .profilepic:active {
+            cursor: pointer;
+            background-color: #ebebeb;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div id="navbar-container" class="navbar-container"></div>
+
+        <!-- The content of the page goes here -->
+        <div class="sccontainer">
+            <div class="profile">
+                <div class="notification">
+                    <span class="material-symbols-outlined">
+                        notifications_active
+                    </span>
+                </div>
+                <div class="profilepic">
+                    <h3>Shivam Mishra</h3>
+                    <span class="material-symbols-outlined">
+                        keyboard_arrow_down
+                    </span>
+                </div>
+            </div>
+            <div class="addclass">
+                <form action="">
+                    <div class="form1">
+
+                        <label for="Sname">Subject Name:</label>
+                        <input class="Fcls" type="textbox" id="Sname" name="Sname" required><br>
+
+
+                        <label for="standard">Standard:</label>
+                        <select class="Fcls" id="standard" name="standard" placeholder="Enter Class:">
+                            <option value="6th">6th</option>
+                            <option value="7th">7th</option>
+                            <option value="8th">8th</option>
+                            <option value="9th">9th</option>
+                            <option value="10th">10th</option>
+                        </select><br>
+                        <label for="divsion">Div:</label>
+                        <input class="Fcls" type="textbox" id="divsion" name="divsion" required><br>
+                    </div>
+                    <div class="form1">
+
+                        <label for="Tname">Teacher's Name:</label>
+                        <input class="Fcls" type="textbox" id="Tname" name="Tname" required><br>
+
+
+
+                        <label for="Tname">Start Time:</label>
+                        <input class="Fcls" type="textbox" id="Stime" name="Stime" required><br>
+
+
+                        <label for="Tname">End Time:</label>
+                        <input class="Fcls" type="textbox" id="Etime" name="Etime" required><br>
+                    </div> <br>
+                </form>
+                <button class="adclassbtn" type="button" onclick=""><span class="material-symbols-outlined">add</span>
+                    Add class</button>
+
+            </div>
+            <div class="cllist">
+                <table class="cltable">
+                    <thead class="cl-li-head">
+                        <tr>
+                            <th>Subject</th>
+                            <th>Standard</th>
+                            <th>Divison</th>
+                            <th>Teacher's Name</th>
+                        </tr>
+                    </thead>
+                    <tbody class="cl-li-body">
+                        <tr>
+                            <td>Programming with Python</td>
+                            <td>6th</td>
+                            <td>A</td>
+                            <td>Shushma Pathak</td>
+                        </tr>
+                        <tr>
+                            <td>English</td>
+                            <td>8th</td>
+                            <td>C</td>
+                            <td>Seema Pathak</td>
+                        </tr>
+                        <tr>
+                            <td>Science</td>
+                            <td>9th</td>
+                            <td>F</td>
+                            <td>Sneha Pathak</td>
+
+                        </tr>
+                        <tr>
+                            <td>Science</td>
+                            <td>9th</td>
+                            <td>F</td>
+                            <td>Sneha Pathak</td>
+
+                        </tr>
+                        <tr>
+                            <td>Science</td>
+                            <td>9th</td>
+                            <td>F</td>
+                            <td>Sneha Pathak</td>
+
+                        </tr>
+                        <tr>
+                            <td>Science</td>
+                            <td>9th</td>
+                            <td>F</td>
+                            <td>Sneha Pathak</td>
+
+                        </tr>
+                        <tr>
+                            <td>Science</td>
+                            <td>9th</td>
+                            <td>F</td>
+                            <td>Sneha Pathak</td>
+
+                        </tr>
+                        <tr>
+                            <td>Science</td>
+                            <td>9th</td>
+                            <td>F</td>
+                            <td>Sneha Pathak</td>
+
+                        </tr>
+                        <tr>
+                            <td>Science</td>
+                            <td>9th</td>
+                            <td>F</td>
+                            <td>Sneha Pathak</td>
+
+                        </tr>
+                        <tr>
+                            <td>Science</td>
+                            <td>9th</td>
+                            <td>F</td>
+                            <td>Sneha Pathak</td>
+
+                        </tr>
+                        <tr>
+                            <td>Science</td>
+                            <td>9th</td>
+                            <td>F</td>
+                            <td>Sneha Pathak</td>
+
+                        </tr>
+                        <tr>
+                            <td>Science</td>
+                            <td>9th</td>
+                            <td>F</td>
+                            <td>Sneha Pathak</td>
+
+                        </tr>
+                        <tr>
+                            <td>Science</td>
+                            <td>9th</td>
+                            <td>F</td>
+                            <td>Sneha Pathak</td>
+
+                        </tr>
+                        <tr>
+                            <td>Science</td>
+                            <td>9th</td>
+                            <td>F</td>
+                            <td>Sneha Pathak</td>
+
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+    </div>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            // Load the navbar
+            fetch("navbar.html")
+                .then(response => response.text())
+                .then(data => {
+                    document.getElementById("navbar-container").innerHTML = data;
+
+                    // After loading the navbar, highlight the active link
+                    const currentPage = window.location.pathname.split("/").pop();
+                    const links = document.querySelectorAll('.sidebar a');
+
+                    links.forEach(link => {
+                        const linkPage = link.getAttribute('href');
+                        if (linkPage === currentPage) {
+                            link.classList.add('active');
+                        } else {
+                            link.classList.remove('active');
+                        }
+                    });
+                })
+                .catch(error => console.error('Error loading navbar:', error));
+        });
+
+    </script>
+</body>
+
+</html>
